@@ -6,44 +6,132 @@
   <meta name="description" content="Personal Portfolio of Sinni Chandra, an aspiring software developer.">
   <title>Sinni Chandra | Portfolio</title>
   <style>
+    /* Reset + General */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #f9f9f9;
       color: #333;
+      scroll-behavior: smooth;
     }
+
     header {
-      background: #333;
+      background: linear-gradient(135deg, #007acc, #00d4ff);
       color: #fff;
-      padding: 20px 0;
+      padding: 50px 20px;
       text-align: center;
     }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #333;
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00d4ff;
+    }
+
     .container {
-      width: 80%;
+      width: 85%;
       margin: auto;
-      overflow: hidden;
-      padding: 20px;
+      padding: 40px 0;
     }
+
     section {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
-    h1, h2 {
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #007acc;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .project-card h3 {
+      margin-top: 15px;
       color: #333;
     }
+    .project-card p {
+      font-size: 0.9rem;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .skill {
+      background: #007acc;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .skill:hover {
+      background: #00d4ff;
+    }
+
+    /* Contact */
+    #contact {
+      text-align: center;
+    }
+
     footer {
       background: #333;
       color: #fff;
       text-align: center;
-      padding: 10px 0;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      padding: 15px 0;
+      margin-top: 40px;
     }
-    a {
-      color: #007acc;
-      text-decoration: none;
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
@@ -53,31 +141,65 @@
     <p>Student | Engineer | Tech Enthusiast</p>
   </header>
 
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <div class="container">
     <section id="about">
       <h2>About Me</h2>
+      <p>Hi, I’m Sinni! I love building software, exploring AI, and solving real-world problems with technology.</p>
     </section>
 
     <section id="experience">
       <h2>Experience</h2>
       <ul>
+        <li>Software Engineering Intern @ Example Company (2024)</li>
+        <li>AI Research Assistant @ University Project (2023)</li>
       </ul>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul>
-      </ul>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 1">
+          <h3>Portfolio Website</h3>
+          <p>A modern personal portfolio site showcasing my work and skills.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 2">
+          <h3>AI Chatbot</h3>
+          <p>An intelligent chatbot built with NLP techniques for customer support.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 3">
+          <h3>Data Visualizer</h3>
+          <p>A web app that visualizes datasets with interactive charts.</p>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="skill">Python</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">SQL</span>
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:chandra.sinni@gmail.com">chandra.sinni@gmail.com</a></p>
-      <p>LinkedIn: <a href="www.linkedin.com/in/sinni-chandra-38330326b" target="_blank">My Profile</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sinni-chandra-38330326b" target="_blank">My Profile</a></p>
     </section>
   </div>
 
